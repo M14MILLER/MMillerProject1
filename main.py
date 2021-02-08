@@ -7,7 +7,8 @@ def get_data():
     all_data = []
     for page in range(162):
         response = requests.get(f"https://api.data.gov/ed/collegescorecard/v1/schools.json?school.degrees_awarded.predominant=2,3&"
-                                f"fields=school.name,school.city,2018.student.size,2017.student.size,2017.earnings.3_yrs_after_completion.overall_count_over_poverty_line,"
+                                f"fields=school.name,school.city,2018.student.size,2017.student.size,"
+                                f"2017.earnings.3_yrs_after_completion.overall_count_over_poverty_line,"
                                 f"2016.repayment.3_yr_repayment.overall&api_key={secrets.api_key}&page={page}")
         if response.status_code != 200:
             print("error getting data")
