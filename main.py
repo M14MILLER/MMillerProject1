@@ -1,6 +1,6 @@
 import requests
 import secrets
-
+import json
 
 def get_data():
     all_data = []
@@ -17,6 +17,8 @@ def get_data():
 
 def main():
     college_data = get_data()
+    with open('school_data.txt', 'w') as outfile:
+        json.dump(college_data, outfile)
 
 if __name__ == '__main__':
     main()
