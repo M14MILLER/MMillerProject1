@@ -17,6 +17,8 @@ def get_data():
         page_of_data = response.json()
         page_of_school_data = page_of_data['results']
         all_data.extend(page_of_school_data)
+
+
     return all_data
 
 
@@ -24,6 +26,7 @@ def main():
     college_data = get_data()
     with open('school_data.txt', 'w') as outfile:
         json.dump(college_data, outfile)
+    print(college_data)
 
 
 if __name__ == '__main__':
