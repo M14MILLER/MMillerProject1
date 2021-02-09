@@ -17,8 +17,6 @@ def get_data():
         page_of_data = response.json()
         page_of_school_data = page_of_data['results']
         all_data.extend(page_of_school_data)
-
-
     return all_data
 
 
