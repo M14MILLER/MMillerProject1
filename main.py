@@ -23,10 +23,9 @@ def get_data():
     return all_data
 
 def open_db(filename: str) -> Tuple[sqlite3.Connection, sqlite3.Cursor]:
-    db_connection = sqlite3.connect(filename)#connect to existing DB or create new one
-    cursor = db_connection.cursor()#get ready to read/write data
-    return db_connection, cursor
-
+        db_connection = sqlite3.connect(filename)#connect to existing DB or create new one
+        cursor = db_connection.cursor()#get ready to read/write data
+        return db_connection, cursor
 
 def close_db(connection: sqlite3.Connection):
     connection.commit()  # make sure any changes get saved
@@ -46,10 +45,14 @@ def add_college(cursor: sqlite3.Cursor, name, city, T2018size, T2017size, T2017e
     VALUES({name}, {city}, {T2018size}, {T2017size}, {T2017earn}, {T2016repay}''')
 
 def main():
+    conn, cursor = open_db("college_db.sqlite")
+    setup_db(cursor)
     college_data = get_data()
     with open('school_data.txt', 'w') as outfile:
         json.dump(college_data, outfile)
     print(college_data)
+    close_db(conn)
+
 
 
 if __name__ == '__main__':
