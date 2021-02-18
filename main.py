@@ -32,16 +32,17 @@ def close_db(connection: sqlite3.Connection):
     connection.close()
 
 def setup_db(cursor:sqlite3.Cursor):
-    cursor.execute('''CREATE TABLE IF NOT EXISTS college_data(school.name TEXT NOT NULL,
-    school.city TEXT NOT NULL, 
-    The2018.student.size INTEGER DEFAULT 0,
-    The2017.student.size INTEGER DEFAULT 0,
-    The2017.earnings.3_yrs_after_completion.overall_count_over_poverty_line REAL DEFAULT 0,
-    The2016.repayment.3_yr_repayment.overall REAL DEFAULT 0,
+    cursor.execute('''CREATE TABLE IF NOT EXISTS college_data(school_name TEXT NOT NULL,
+    school_city TEXT NOT NULL, 
+    The2018_student_size INTEGER DEFAULT 0,
+    The2017_student_size INTEGER DEFAULT 0,
+    The2017_earnings_3_yrs_after_completion_overall_count_over_poverty_line REAL DEFAULT 0,
+    The2016_repayment_3_yr_repayment_overall REAL DEFAULT 0,
     );''')
 
 def add_college(cursor: sqlite3.Cursor, name, city, T2018size, T2017size, T2017earn, T2016repay):
-    cursor.execute(f'''INSERT INTO COLLEGES (The2018_student_size, The2017_student_size, The2017_earn, The2016_repay)
+    cursor.execute(f'''INSERT INTO COLLEGES (school_name, school_city, The2018_student_size, The2017_student_size, 
+                    The2017_earnings_3_yrs_after_completion_overall_count_over_poverty_line, The2016_repayment_3_yr_repayment_overall)
     VALUES({name}, {city}, {T2018size}, {T2017size}, {T2017earn}, {T2016repay}''')
 
 def main():
