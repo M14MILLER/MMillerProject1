@@ -43,7 +43,7 @@ def setup_db(cursor:sqlite3.Cursor):
 def add_college(cursor: sqlite3.Cursor, name, city, T2018size, T2017size, T2017earn, T2016repay):
     cursor.execute(f'''INSERT INTO COLLEGES (school_name, school_city, The2018_student_size, The2017_student_size, 
                     The2017_earnings_3_yrs_after_completion_overall_count_over_poverty_line, The2016_repayment_3_yr_repayment_overall)
-    VALUES({name}, {city}, {T2018size}, {T2017size}, {T2017earn}, {T2016repay}''')
+    VALUES({name}, {city}, {T2018size}, {T2017size}, {T2017earn}, {T2016repay})''')
 
 def main():
     conn, cursor = open_db("college_db.sqlite")
