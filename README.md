@@ -5,5 +5,7 @@ This project sprint takes data from the college api and returns and prints out t
 
 # MMillerProjectSprint2
 
-This print takes data from the college api and saves it into a database program
+This sprint takes data from the college api and saves it into a database program. 
+The ran into a couple of issues with syntax in main.py and i have one written, but not run test for the db.
+Will look to get issues fixed for sprint 3
 
