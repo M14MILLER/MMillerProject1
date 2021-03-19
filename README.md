@@ -17,3 +17,10 @@ I was trying to base it off of your file as well as looking at peer screenshots 
 I also added a requirements file
 I hope to have a cleaner and complete sprint 4
 
+# MMillerProjectSprint4 
+
+The sprint is uspposed to have a gui created to allow natural interaction from the user, allowing the user to uppdate data or run a data visualization.
+I was unable to get a data map created.
+I have never really worked with GUI's that well so i tried to follow the demo posted on GitHub.
+After seeing the solutions to the previous sprints, reorganized my project files.
+Hoping my grade wont be terribly affected.
